@@ -59,7 +59,7 @@ Socket programming finds applications in various domains, including web developm
    
 
 ## CLIENT:
-
+~~~
 from datetime import datetime
 s=socket.socket()
 s.bind(('localhost',8000))
@@ -72,19 +72,20 @@ ack=c.recv(1024).decode()
 if ack:
 print(ack)
 c.close()
-
+~~~
 ## SERVER:
-
+~~~
 import socket
 s=socket.socket()
 s.connect(('localhost',8000))
 print(s.getsockname())
 print(s.recv(1024).decode())
 s.send("acknowledgement recived from the server".encode())
-
+~~~
 ## OUTPUT
 
 CLIENT 
+
 ![image](https://github.com/user-attachments/assets/20df5502-f927-41a0-aea6-0d8481f3e676)
 
 
